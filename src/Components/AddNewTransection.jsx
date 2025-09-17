@@ -1,13 +1,16 @@
 import React, { useState } from "react";
+import { useContext } from "react";
+import { MyContext } from "../Context/ContextData";
 
-const AddNewTransection = ({
-  description,
-  setDescription,
-  money,
-  setMoney,
-  setTransections,
-  transections,
-}) => {
+const AddNewTransection = () => {
+  const {
+    transections,
+    setTransections,
+    description,
+    setDescription,
+    money,
+    setMoney,
+  } = useContext(MyContext);
   function addTransection(e) {
     e.preventDefault();
     setTransections([

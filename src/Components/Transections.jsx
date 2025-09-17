@@ -1,6 +1,7 @@
 import React from "react";
-
-const Transections = ({ transections, setTransections }) => {
+import { useContext } from "react";
+import { MyContext } from "../Context/ContextData";
+const Transections = () => {
   function deleteTransection(id) {
     setTransections(
       transections.filter((t) => {
@@ -8,6 +9,7 @@ const Transections = ({ transections, setTransections }) => {
       })
     );
   }
+  const { transections, setTransections } = useContext(MyContext);
   return (
     <>
       <h3>History</h3>
